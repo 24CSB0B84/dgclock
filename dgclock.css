@@ -1,0 +1,185 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    height: 100vh;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Main Container */
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Aligns items at the top */
+    align-items: center; /* Centers items horizontally */
+    gap: 30px; /* Spacing between sections */
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 800px; /* Ensures the layout doesn’t stretch too wide */
+  }
+  
+  /* Clock Styles */
+  #clock {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    animation: neon-glow 2s infinite;
+  }
+  
+  /* Shared Section Layouts (Alarm, Theme Switcher, Stopwatch, Timer) */
+  .alarm,
+  .theme-switcher,
+  .stopwatch,
+  .timer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Space between elements within sections */
+    width: 100%;
+  }
+  
+  /* Input Fields and Buttons */
+  input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    text-align: center;
+  }
+  
+  button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #9c0f0f;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+    max-width: 200px; /* Ensures buttons have a consistent size */
+  }
+  
+  button:hover {
+    background-color: #af5080;
+  }
+  
+  .theme-btn {
+    width: 100%;
+    max-width: 150px;
+    margin: 5px;
+  }
+  
+  /* Displays for Stopwatch and Countdown Timer */
+  #stopwatchDisplay,
+  #countdownDisplay {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #000;
+    text-align: center;
+  }
+  
+  /* Progress Bar for Timer */
+  #progressBar {
+    width: 100%;
+    height: 15px;
+    background: #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  #progressBar::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #4caf50;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: width 1s linear;
+  }
+  
+  /* Theme Styles */
+  body.light {
+    background-color: #f8f9fa;
+    color: #333;
+  }
+  
+  body.dark {
+    background-color: #343a40;
+    color: #f8f9fa;
+  }
+  
+  body.neon {
+    background-color: #071772;
+    color: #0ff;
+  }
+  
+  body.custom {
+    background-color: #2eb0b4; /* Example Custom Background */
+    color: #333;
+  }
+/* Header Styles */
+.main-header {
+    width: 100%; /* Ensures the header spans the entire width */
+    padding: 20px;
+    background-image: url('https://t3.ftcdn.net/jpg/01/16/60/78/360_F_116607854_ric2VCk6rCwjj10ghu9jhBjx97xuuyJb.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: white;
+    position: fixed; /* Keeps the header at the top of the viewport */
+    top: 0; /* Positions the header at the very top */
+    left: 0; /* Aligns the header to the left */
+    z-index: 10; /* Ensures the header stays above other elements */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .main-header h1 {
+    font-size: 3rem;
+    margin: 0;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Adjust the container to account for the fixed header */
+  .container {
+    margin-top: 100px; /* Adds space below the fixed header */
+  }
+  /* Shaking animation for the button */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+  }
+  
+  .shake {
+    animation: shake 0.5s infinite;
+  }
+  
+  /* Neon Glowing Animation */
+@keyframes neon-glow {
+    0%, 100% {
+      text-shadow: 0 0 5px #fff, 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff, 0 0 40px #0ff, 0 0 50px #0ff;
+    }
+    50% {
+      text-shadow: 0 0 3px #fff, 0 0 8px #0ff, 0 0 15px #0ff, 0 0 25px #0ff, 0 0 30px #0ff, 0 0 35px #0ff;
+    }
+  }
+  
+  #clock {
+    font-size: 4rem; /* Adjust font size for visibility */
+    font-weight: bold;
+    color: rgb(16, 51, 165); /* Base neon color */
+    text-align: center;
+    animation: neon-glow 2s infinite; /* Apply the neon-glow animation */
+  }
+  
